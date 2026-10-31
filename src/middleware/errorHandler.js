@@ -1,0 +1,21 @@
+export function notFoundHandler(req, res, next) {
+  res.status(404).json({
+    success: false,
+    message: `Route ${req.originalUrl} not found`,
+  });
+}
+
+// eslint-disable-next-line no-unused-vars
+export function errorHandler(err, req, res, next) {
+  const statusCode = err.statusCode || 500;
+  const message = err.isOperational ? err.message : 'Internal server error';
+
+  if (!err.isOperational) {
+    console.error(err);
+  }
+
+  res.status(statusCode).json({
+    success: false,
+    message,
+  });
+}

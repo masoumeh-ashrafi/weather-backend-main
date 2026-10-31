@@ -1,0 +1,22 @@
+{
+  "name": "weather-app-backend",
+  "version": "1.0.0",
+  "description": "Backend proxy that safely fetches weather data from OpenWeatherMap without exposing the API key",
+  "type": "module",
+  "main": "src/server.js",
+  "engines": {
+    "node": ">=18.0.0"
+  },
+  "scripts": {
+    "start": "node src/server.js",
+    "dev": "node --watch src/server.js"
+  },
+  "dependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.5",
+    "express": "^4.21.2",
+    "express-rate-limit": "^8.6.2",
+    "helmet": "^7.2.0",
+    "morgan": "^1.10.0"
+  }
+}
